@@ -1,0 +1,218 @@
+/*
+	autor:			@khrizenriquez #afro-K
+	descripción:	se listarán los datos según la información obtenida por la API de dice http://www.dice.com/common/content/documentation/api.html?CMPID=AF_PG_UP_JS_AV_CC__&utm_source=Programmr&utm_medium=Partner&utm_content=&utm_campaign=Advocacy_CodingChallenge
+					donde se mostrarán los empleos para desarrolladores móviles o todos los empleos
+					para la competencia "Dice Coding Contest" de Programmr ( http://www.programmr.com/dice-jobs-coding-contest )
+
+	otras referencias: Usaré los mapas de Highcharts para desplegar la información, stylus para crear un mejor CSS, JS para darle vida a la App.
+*/
+//		Área de importación
+@import url( "http://fonts.googleapis.com/css?family=Open+Sans:300" )
+@import url( "elusive-webfont.css" )
+@import url( "bootstrap.min.css" )
+@import normalize
+
+colorFondo = #2980b9;
+
+//		Selectores generales
+body
+	background fixed url("../img/bk/blurImg.jpg") no-repeat
+	background-size 100% 100%
+	font-family 'Open Sans', sans-serif
+	font-size 16px
+	text-align center
+h1
+	color #ecf0f1
+	font-size 2.5em
+	text-decoration underline
+footer
+	padding 1em
+	label
+		color white
+		a
+			color white
+			text-decoration none
+			&:hover
+				text-decoration underline
+			&:visited, &:linked
+				color white
+section
+	color #050505
+	width 100%
+	.searchValues
+		width 30%
+	.infoValues
+		width 60%
+		legend
+			margin-bottom 0
+		#regionJobsData
+			text-align left
+			label
+				display block
+				margin auto .5em .5em .5em
+				width 100%
+			.seeGraph
+				background colorFondo
+				color white
+				cursor pointer
+				border .5px solid black
+				font-size 1.5em
+	.searchValues, .infoValues
+		background white
+		border-radius .5em .5em 0 0
+		box-shadow 5px 3px 5px rgba(black, .5)
+		display inline-block
+		margin 2% 1%
+		overflow hidden
+		padding 0 auto
+		transition all .5s linear
+		vertical-align top
+		width 48%
+	div
+		fieldset
+			border none
+			margin 0 auto
+			padding 0px
+			.form-group
+				border none
+				margin-bottom 0
+				width 100%
+			legend
+				background black
+				border-radius .3em .3em 0 0
+				color white
+				margin-bottom 1%
+			div
+				ul
+					.list-group-item
+						transition all .25s ease
+						&:hover
+							background colorFondo
+							border colorFondo
+							color white
+							transition all .25s ease
+//		Selectores por id
+#chartJobsData, #regionJobsData
+	display inline-block
+	vertical-align top
+	transition all .5s linear
+#chartJobsData
+	width 100%
+	padding .5% 3%
+	*
+		text-align left
+	i
+		color colorFondo
+		font-size 15em
+#regionJobsData
+	overflow hidden
+	width 0%
+//		Selectores por clases
+.listValues
+	.list-group
+		.list-group-item
+			transition all .25s ease
+			&:hover
+				background colorFondo
+				border colorFondo
+				color white
+				transition all .25s ease
+		.regionJobs
+			cursor context-menu
+			&:hover
+				text-decoration none
+		.mobileJobs, .regionJobs
+			cursor pointer
+			&:hover
+				text-decoration underline
+//		media queries
+@media only screen and (min-width: 800px)
+	section
+		.searchValues
+			width 30%
+		.infoValues
+			width 60%
+		.searchValues, .infoValues
+			form
+				width 100%
+@media only screen and (max-width: 800px) and (min-width: 600px)
+	section
+		.searchValues
+			width 90%
+		.infoValues
+			width 90%
+		.searchValues, .infoValues
+			display block
+			margin 1% auto
+@media only screen and (max-width: 600px)
+	body
+		font-size 14px
+	h1
+		font-size 2em
+	footer
+		padding .5em
+	section
+		margin 0 auto
+		.searchValues, .infoValues
+			display block
+			margin-bottom 5%
+			width 98%
+//		media para móviles
+//	Landscape
+@media only screen and (max-device-width: 800px) and (orientation: landscape)
+	body
+		background colorFondo
+		font-size 14px
+	h1
+		font-size 2em
+	footer
+		padding .5em
+	section
+		margin 0 auto
+		.infoValues
+			#regionJobsData
+				label
+					margin auto .5em 1em .5em
+				.seeGraph
+					font-size 2em
+					padding .2em
+		.searchValues
+			#jobsList
+				font-size 1.2em
+		.searchValues, .infoValues
+			display block
+			margin-bottom 5%
+			width 98%
+	.listValues
+		.list-group
+			.list-group-item
+				padding 1.5em auto
+//	Portrait
+@media only screen and (max-device-width: 800px) and (orientation: portrait)
+	body
+		background colorFondo
+		font-size 14px
+	h1
+		font-size 2em
+	footer
+		padding .5em
+	section
+		margin 0 auto
+		.infoValues
+			#regionJobsData
+				label
+					margin auto .5em 1em .5em
+				.seeGraph
+					font-size 2em
+					padding .2em
+		.searchValues
+			#jobsList
+				font-size 1.2em
+		.searchValues, .infoValues
+			display block
+			margin-bottom 5%
+			width 98%
+	.listValues
+		.list-group
+			.list-group-item
+				padding 1.5em auto

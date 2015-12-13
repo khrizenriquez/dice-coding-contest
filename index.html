@@ -1,0 +1,74 @@
+<!-- 
+	autor:			@khrizenriquez #afro-K
+	descripci??n:	se listar??n los datos seg??n la informaci??n obtenida por la API de dice http://www.dice.com/common/content/documentation/api.html?CMPID=AF_PG_UP_JS_AV_CC__&utm_source=Programmr&utm_medium=Partner&utm_content=&utm_campaign=Advocacy_CodingChallenge
+					donde se mostrar??n los empleos para desarrolladores m??viles o todos los empleos 
+					para la competencia "Dice Coding Contest" de Programmr ( http://www.programmr.com/dice-jobs-coding-contest )
+
+	otras referencias: Usar?? los mapas de Highcharts para desplegar la informaci??n, stylus para crear un mejor CSS, JS para darle vida a la App.
+ -->
+<!doctype html>
+	<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta charset="UTF-8" />
+
+		<link rel="stylesheet" href="public/estilo/main.css" />
+
+		<title>Dice Coding Contest</title>
+	</head>
+	<body>
+
+		<h1>Dice Coding Contest</h1>
+
+		<section>
+			<div class="searchValues">
+				<form role="form">
+					<fieldset>
+						<div class="form-group">
+							<legend>What job are you searching for?</legend>
+							<select id="jobsList" class="form-control">
+								<option value="0">Jobs</option>
+								<option value="mobile, android, ios, windows phone, UI / UX developers">All mobile jobs in California</option>
+								<option value="mobile">Mobile jobs in California</option>
+								<option value="android">Android developers jobs in California</option>
+								<option value="ios">iOS developers jobs in California</option>
+								<option value="windows phone">Windows Phone developers jobs in California</option>
+								<option value="UI / UX developers">UI / UX developers jobs in California</option>
+								<option value="6">Jobs graph by region</option>
+							</select>
+						</div>
+						<div class="message"></div>
+						<div class="listValues">
+							<h3></h3>
+							<ul class='list-group'></ul>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+
+			<div class="infoValues">
+				<form role="form">
+					<fieldset>
+						<div class="form-group">
+							<legend>Data</legend>
+							<div class="message"></div>
+							<div id="regionJobsData"></div>
+							<div id="chartJobsData"></div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+
+		<footer>
+			<label><a href="https://twitter.com/khrizEnriquez">@khrizenriquez</a></label>
+		</footer>
+
+		<script src="public/js/libs/prefixfree.min.js"></script>
+		<script src="public/js/libs/jquery.min.js"></script>
+		<script src="public/js/libs/highcharts.js"></script>
+		<script src="public/js/libs/exporting.js"></script>
+		<script src="public/js/libs/bootstrap.min.js"></script>
+		<script src="public/js/init.js"></script>
+	</body>
+</html>
