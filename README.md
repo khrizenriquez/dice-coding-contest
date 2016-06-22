@@ -8,4 +8,4 @@ Desafío realizado por [programmr](http://programmr.com/), donde utilizando una 
 ![Dice content por Chris Enríquez](http://dicecodingcontest.khrizenriquez.com/public/img/demo/demo_12_05_2016.png)
 
 
-[Repositorio en github](https://github.com/khrizenriquez/dice-coding-contest)
+[Chris Enríquez](https://twitter.com/khrizenriquez)
